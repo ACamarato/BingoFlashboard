@@ -55,6 +55,17 @@ function populateUI() {
         bingoNumbers.forEach((bingoNumber, index) => {
             if (selectedBingoNumbers.indexOf(index) > -1) {
                 bingoNumber.classList.add('selected');
+                bingoNumber.classList.add('last');
+            }
+        });
+    }
+
+    const calledBingoNumbers = JSON.parse(localStorage.getItem('calledBingoNumbers'));
+
+    if (calledBingoNumbers !== null && calledBingoNumbers.length > 0) {
+        bingoNumbers.forEach((bingoNumber, index) => {
+            if (calledBingoNumbers.indexOf(index) > -1) {
+                bingoNumber.classList.add('called');
             }
         });
     }
@@ -64,6 +75,7 @@ function populateUI() {
     if (selectedGameIndex !== null) {
         gameSelect.selectedIndex = selectedGameIndex;
     }
+    updateLastCalled();
 }
 
 // Bingo game select event
