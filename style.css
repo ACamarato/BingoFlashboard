@@ -31,7 +31,8 @@ body {
     }
 
 .container {
-    margin-top: 10px;
+    width: 90%;
+    margin-top: 20px;
     margin-bottom: 10px;
 }
 
@@ -52,7 +53,7 @@ body {
 .letter {
     background-color: #444451;
     height: 85px;
-    width: 85px;
+    width: 100px;
     margin: 3px;
     text-align: center;
     font-size: 65px;
@@ -61,7 +62,7 @@ body {
 .number {
     background-color: #444451;
     height: 85px;
-    width: 85px;
+    width: 100px;
     margin: 3px;
     text-align: center;
     font-size: 65px;
@@ -104,7 +105,7 @@ p.text {
     }
 
 .bottom {
-    width: 80%;
+    width: 90%;
     height: 600px;
     margin: auto;
     padding: 50px,0px,50px,0px;
