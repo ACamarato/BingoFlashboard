@@ -14,11 +14,11 @@ body {
     margin: 0;
 }
 
-.movie-container {
+.game-container {
     margin: 20px 0;
 }
 
-    .movie-container select {
+    .game-container select {
         background-color: #fff;
         border: 0;
         border-radius: 5px;
@@ -31,41 +31,54 @@ body {
     }
 
 .container {
-    perspective: 1000px;
     margin-bottom: 30px;
 }
 
-.seat {
+.balls-called {
     background-color: #444451;
-    height: 12px;
-    width: 15px;
-    margin: 3px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    text-align: center;
+    font-size: 65px;
 }
 
-    .seat.selected {
+.last-ball-called {
+    background-color: #444451;
+    margin: 3px;
+    text-align: center;
+    font-size: 65px;
+}
+
+.letter {
+    background-color: #444451;
+    height: 75px;
+    width: 75px;
+    margin: 3px;
+    text-align: center;
+    font-size: 65px;
+}
+
+.number {
+    background-color: #444451;
+    height: 75px;
+    width: 75px;
+    margin: 3px;
+    text-align: center;
+    font-size: 65px;
+}
+
+    .number.selected {
         background-color: #6feaf6;
     }
 
-    .seat.occupied {
-        background-color: #fff;
+    .number.called {
+        background-color: #6feaf6;
     }
 
-    .seat:nth-of-type(2) {
-        margin-right: 18px;
-    }
-
-    .seat:nth-last-of-type(2) {
-        margin-left: 18px;
-    }
-
-    .seat:not(.occupied):hover {
+    .number:not(.called):hover {
         cursor: pointer;
         transform: scale(1.2);
     }
 
-.showcase .seat:not(.occupied):hover {
+.showcase .number:not(.called):hover {
     cursor: default;
     transform: scale(1);
 }
@@ -93,15 +106,6 @@ body {
 
 .row {
     display: flex;
-}
-
-.screen {
-    background-color: #fff;
-    height: 70px;
-    width: 100%;
-    margin: 15px 0;
-    transform: rotateX(-45deg);
-    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
 }
 
 p.text {
