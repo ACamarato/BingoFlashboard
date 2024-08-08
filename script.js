@@ -31,7 +31,8 @@ function updateSelectedCount() {
     const calledBingoNumbersCount = calledBingoNumbers.length;
 
     count.innerText = selectedBingoNumbersCount + calledBingoNumbersCount;
-   // total.innerText = selectedBingoNumbersCount * gamePrice;
+    jackpotAmount.innerText = "$" + gamePrice;
+    //gameStyle.innerText = 
 
     setGameData(gameSelect.selectedIndex, gameSelect.value);
 }

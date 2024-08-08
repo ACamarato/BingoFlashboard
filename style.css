@@ -15,7 +15,7 @@ body {
 }
 
 .game-container {
-    margin: 20px 0;
+    margin: auto;
 }
 
     .game-container select {
@@ -40,14 +40,24 @@ body {
     background-color: #444451;
     text-align: center;
     margin: 3px;
-    font-size: 65px;
+}
+
+.game-style {
+    background-color: #444451;
+    text-align: center;
+    margin: 3px;
+}
+
+.jackpot-amount {
+    background-color: #444451;
+    text-align: center;
+    margin: 3px;
 }
 
 .last-ball-called {
     background-color: #444451;
     margin: 3px;
     text-align: center;
-    font-size: 65px;
 }
 
 .letter {
@@ -101,14 +111,18 @@ p.text {
 
     p.text span {
         color: #6feaf6;
-        font-size: 350px;
+        font-size: 200px;
     }
+p.gameStyle {
+    color: #6feaf6;
+    font-size: 100px;
+    margin: 5px 0
+}
 
 .bottom {
     width: 90%;
-    height: 600px;
     margin: auto;
-    padding: 50px,0px,50px,0px;
+
 }
 
 .card.left {
@@ -119,12 +133,22 @@ p.text {
     float: right;
 }
 
+.newGameButton {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+}
 
 .card {
     --bs-card-spacer-y: 0.25rem;
     --bs-card-spacer-x: 0.25rem;
     --bs-card-title-spacer-y: 0.5rem;
-    --bs-card-subtitle-color:;
     --bs-card-inner-border-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
     --bs-card-cap-padding-y: 0.5rem;
     --bs-card-cap-padding-x: 1rem;
