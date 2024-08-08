@@ -31,12 +31,14 @@ body {
     }
 
 .container {
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .balls-called {
     background-color: #444451;
     text-align: center;
+    margin: 3px;
     font-size: 65px;
 }
 
@@ -49,8 +51,8 @@ body {
 
 .letter {
     background-color: #444451;
-    height: 75px;
-    width: 75px;
+    height: 85px;
+    width: 85px;
     margin: 3px;
     text-align: center;
     font-size: 65px;
@@ -58,8 +60,8 @@ body {
 
 .number {
     background-color: #444451;
-    height: 75px;
-    width: 75px;
+    height: 85px;
+    width: 85px;
     margin: 3px;
     text-align: center;
     font-size: 65px;
@@ -67,42 +69,26 @@ body {
 
     .number.selected {
         background-color: #6feaf6;
+        animation-name: fadeInOut;
+        animation-duration: 2.5s;
+        animation-iteration-count: infinite;
     }
 
-    .number.called {
-        background-color: #6feaf6;
+    @keyframes fadeInOut {
+        0% {background-color: #444451;}
+        50% {background-color: #6feaf6;}
+        100% {background-color: #444451;}
     }
+
+.number.called {
+    background-color: #418d94;
+}
 
     .number:not(.called):hover {
         cursor: pointer;
         transform: scale(1.2);
     }
 
-.showcase .number:not(.called):hover {
-    cursor: default;
-    transform: scale(1);
-}
-
-.showcase {
-    background: rgba(0, 0, 0, 0.1);
-    padding: 5px 10px;
-    border-radius: 5px;
-    color: #777;
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-}
-
-    .showcase li {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 10px;
-    }
-
-        .showcase li small {
-            margin-left: 2px;
-        }
 
 .row {
     display: flex;
@@ -114,4 +100,41 @@ p.text {
 
     p.text span {
         color: #6feaf6;
+        font-size: 350px;
     }
+
+.bottom {
+    width: 80%;
+    height: 600px;
+    margin: auto;
+    padding: 50px,0px,50px,0px;
+}
+
+.card.left {
+    float: left;
+}
+
+.card.right {
+    float: right;
+}
+
+
+.card {
+    --bs-card-spacer-y: 0.25rem;
+    --bs-card-spacer-x: 0.25rem;
+    --bs-card-title-spacer-y: 0.5rem;
+    --bs-card-subtitle-color:;
+    --bs-card-inner-border-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
+    --bs-card-cap-padding-y: 0.5rem;
+    --bs-card-cap-padding-x: 1rem;
+    --bs-card-group-margin: 0.25rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.card-header {
+    padding: var(--bs-card-cap-padding-y) var(--bs-card-cap-padding-x);
+    margin-bottom: 0;
+}

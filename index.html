@@ -8,16 +8,6 @@
     <title>Bingo Flashboard</title>
 </head>
 <body>
-    <div class="game-container">
-        <label>Pick a game:</label>
-        <select id="game">
-            <option value="1">Coverall</option>
-            <option value="2">Regular</option>
-            <option value="8">Specal</option>
-            <option value="9">Flag</option>
-        </select>
-    </div>
-
     <div class="container">
 
         <div class="row">
@@ -111,22 +101,38 @@
             <div class="number">75</div>
         </div>
     </div>
-    <div class="row">
-        <div class="balls-called">
-            <p class="text">
-                Balls Called<span id="count">0</span>
-            </p>
+    <section class="bottom">
+        <div class="card left" style="width: 30rem;">
+            <h1 class="card-header">Ball Count</h1>
+            <div class="balls-called">
+                <p class="text">
+                    <span id="count">0</span>
+                </p>
+            </div>
         </div>
-        <div class="last-ball-called">
-            <p class="text">
-                Last Called Ball<span id="lastCalled">0</span>
-            </p>
+        <div class="card right" style="width: 30rem;">
+            <h1 class="card-header">Last Ball Called</h1>
+            <div class="last-ball-called">
+                <p class="text">
+                    <span id="lastCalled">0</span>
+                </p>
+            </div>
         </div>
-    </div>
+    </section>
     <div class="game-card">
-        
+
     </div>
-    <button class="newGameButton">Clear Board</button>
+    <div class="game-container">
+        <label>Pick a game:</label>
+        <select id="game">
+            <option value="1">Coverall</option>
+            <option value="2">Regular</option>
+            <option value="8">Specal</option>
+            <option value="9">Flag</option>
+        </select>
+        <button class="newGameButton">Clear Board</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
