@@ -4,6 +4,7 @@ const count = document.getElementById('count');
 const total = document.getElementById('total');
 const gameSelect = document.getElementById('game');
 const lastCalled = document.getElementById('lastCalled');
+const newGameButton = document.querySelector('.newGameButton');
 
 populateUI();
 
@@ -30,7 +31,7 @@ function updateSelectedCount() {
     const calledBingoNumbersCount = calledBingoNumbers.length;
 
     count.innerText = selectedBingoNumbersCount + calledBingoNumbersCount;
-    total.innerText = selectedBingoNumbersCount * gamePrice;
+   // total.innerText = selectedBingoNumbersCount * gamePrice;
 
     setGameData(gameSelect.selectedIndex, gameSelect.value);
 }
@@ -77,7 +78,7 @@ function addCalledClass() {
 
     lastToCalled.forEach(last => {
         last.classList.add('called');
-        last.classList.remove('selected')
+        last.classList.remove('selected');
         last.classList.remove('last');
     })
 }
@@ -107,6 +108,20 @@ container.addEventListener('click', e => {
 
     }
     
+});
+
+// Clear Bingo board button click
+newGameButton.addEventListener('click', e => {
+    if (
+        confirm("Start a new game? This will clear the board.")) {
+        var allCalled = document.querySelectorAll('.number');
+
+        allCalled.forEach(number => 
+            number.classList.remove('last','selected','called'));
+        }
+    updateSelectedCount();
+    lastCalled.innerText = 0
+
 });
 
 // Initial count and total set
