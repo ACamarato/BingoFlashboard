@@ -5,15 +5,18 @@ const total = document.getElementById('total');
 const gameSelect = document.getElementById('game');
 const lastCalled = document.getElementById('lastCalled');
 const newGameButton = document.querySelector('.newGameButton');
+const jackpotAmountButton = document.querySelector('.jackpotAmountButton');
+const gameInputButton = document.querySelector('.gameInputButton');
 
 populateUI();
 
-let gamePrice = +gameSelect.value;
+let gamePrice = +gameAmount.value;
+var gameStyle = gameInput.value;
 
-// Save selected game index and price
-function setGameData(gameIndex, gamePrice) {
-    localStorage.setItem('selectedGameIndex', gameIndex);
+// Save selected price
+function setGameData(gamePrice, gameStyle) {
     localStorage.setItem('selectedGamePrice', gamePrice);
+    localStorage.setItem('selectedGameStyle', gameStyle);
 }
 
 // Update total and count
@@ -32,9 +35,9 @@ function updateSelectedCount() {
 
     count.innerText = selectedBingoNumbersCount + calledBingoNumbersCount;
     jackpotAmount.innerText = "$" + gamePrice;
-    //gameStyle.innerText = 
+    gameStyleSpan.innerText = gameStyle;
 
-    setGameData(gameSelect.selectedIndex, gameSelect.value);
+    setGameData(gameAmount.value, gameInput.value);
 }
 
 // Show last called number
@@ -70,20 +73,20 @@ function populateUI() {
         });
     }
 
-    const selectedGameIndex = localStorage.getItem('selectedGameIndex');
+    const selectedGamePrice = localStorage.getItem('selectedGamePrice');
 
-    if (selectedGameIndex !== null) {
-        gameSelect.selectedIndex = selectedGameIndex;
+    if (selectedGamePrice !== null) {
+        gameAmount.value = selectedGamePrice
     }
+
+    const selectedGameStyle = localStorage.getItem('selectedGameStyle');
+
+    if (selectedGameStyle !== null) {
+        gameInput.value = selectedGameStyle
+    }
+
     updateLastCalled();
 }
-
-// Bingo game select event
-gameSelect.addEventListener('change', e => {
-    gamePrice = +e.target.value;
-    setGameData(e.target.selectedIndex, e.target.value);
-    updateSelectedCount();
-});
 
 // Lock Bingo number after no longer last called
 function addCalledClass() {
@@ -135,6 +138,19 @@ newGameButton.addEventListener('click', e => {
     updateSelectedCount();
     lastCalled.innerText = 0
 
+});
+
+// Clear Bingo board button click
+jackpotAmountButton.addEventListener('click', e => {
+    gamePrice = gameAmount.value;
+    updateSelectedCount();
+
+});
+
+// Bingo game select event
+gameInputButton.addEventListener('click', e => {
+    gameStyle = gameInput.value;
+    updateSelectedCount();
 });
 
 // Initial count and total set
